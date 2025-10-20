@@ -52,6 +52,7 @@ jupyter = [
   "jupyterlab-spreadsheet-editor",
 ]
 dev = ["nomad-lab[parsing, infrastructure, dev]>=1.3.4"]
+plugins = []
 
 [tool.uv]
 extra-index-url = [

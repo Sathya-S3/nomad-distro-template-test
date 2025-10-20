@@ -2653,7 +2653,7 @@ requires-dist = [
     { name = "setuptools" },
     { name = "voila", marker = "extra == 'jupyter'" },
 ]
-provides-extras = ["jupyter", "dev"]
+provides-extras = ["jupyter", "dev", "plugins"]
 
 [[package]]
 name = "nomad-lab"

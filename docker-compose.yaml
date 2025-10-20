@@ -65,6 +65,31 @@ services:
       retries: 30
       start_period: 10s
 
+  # JupyterHub for NORTH tools
+  jupyterhub:
+    restart: unless-stopped
+    image: jupyterhub/jupyterhub:4.1.6
+    container_name: nomad_jupyterhub
+    volumes:
+      # Mount Docker socket to spawn containers
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      # Mount JupyterHub config from NOMAD
+      - ./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py:ro
+    ports:
+      - 9000:9000
+    environment:
+      - DOCKER_NETWORK_NAME=nomad-distro-dev-test_default
+    command: >
+      bash -c "
+      pip install dockerspawner oauthenticator &&
+      jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
+      "
+    depends_on:
+      - mongo
+      - rabbitmq
+    networks:
+      - default
+
   # nomad worker (processing)
   worker:
     restart: unless-stopped

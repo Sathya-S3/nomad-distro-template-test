@@ -9,9 +9,30 @@ oasis:
 north:
   jupyterhub_crypt_key: "978bfb2e13a8448a253c629d8dd84ff89587f30e635b753153960930cad9d36d"
   tools:
+    include:
+      - voila
     options:
       jupyter:
         image: ghcr.io/sathya-s3/nomad-distro-template-test/jupyter:main
+      voila:
+        maintainer:
+          - name: Sathya Sai Seetharaman
+            email: sathya-sai.seetharaman@stfc.ac.uk
+        
+        # Docker image with Voilà installed
+        image: "ccpnc-voila:dev"
+        
+        # URL path to access Voilà
+        path_prefix: "voila/render"
+        
+        # Enable launching with specific notebook file
+        with_path: true
+        
+        # Which files can launch this tool
+        file_extensions: ["ipynb"]
+        
+        # Where files are mounted in container
+        mount_path: "/home/jovyan"
 
 meta:
   deployment: "oasis"
@@ -27,3 +48,9 @@ mongo:
 elastic:
   entries_index: nomad_oasis_entries_v1
   materials_index: nomad_oasis_materials_v1
+
+plugins:
+  entry_points:
+    exclude: 
+      - "electronicparsers:magres_parser_entry_point"
+      - "nomad_parser_magres.parsers:magres_parser"

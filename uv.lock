@@ -381,7 +381,7 @@ wheels = [
 [[package]]
 name = "ccpnc-oasis-app"
 version = "0.1.0"
-source = { git = "https://github.com/CCP-NC/ccpnc-oasis-app.git?rev=278627c34b45497c81ba2cf3af7c07f92325476e#278627c34b45497c81ba2cf3af7c07f92325476e" }
+source = { git = "https://github.com/CCP-NC/ccpnc-oasis-app.git?rev=9b35dc22689e39265e65af6a77e64736e51020d3#9b35dc22689e39265e65af6a77e64736e51020d3" }
 dependencies = [
     { name = "nomad-lab" },
     { name = "python-magic-bin", marker = "sys_platform == 'win32'" },
@@ -2630,7 +2630,7 @@ jupyter = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ccpnc-oasis-app", git = "https://github.com/CCP-NC/ccpnc-oasis-app.git?rev=278627c34b45497c81ba2cf3af7c07f92325476e" },
+    { name = "ccpnc-oasis-app", git = "https://github.com/CCP-NC/ccpnc-oasis-app.git?rev=9b35dc22689e39265e65af6a77e64736e51020d3" },
     { name = "ipyaggrid", marker = "extra == 'jupyter'" },
     { name = "ipydatagrid", marker = "extra == 'jupyter'" },
     { name = "ipympl", marker = "extra == 'jupyter'" },

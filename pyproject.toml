@@ -59,6 +59,9 @@ extra-index-url = [
   "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple",
 ]
 constraint-dependencies = ["hyperspy>=1.7.6"]
+override-dependencies = [
+  "nomad-nmr-schema @ git+https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git@cbecd3e37679b7a5ad3d0c65e0b37d87b1f599a4",
+]
 prerelease = "disallow"
 
 [tool.setuptools.packages.find]

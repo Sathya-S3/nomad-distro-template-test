@@ -13,6 +13,7 @@ prerelease-mode = "disallow"
 
 [manifest]
 constraints = [{ name = "hyperspy", specifier = ">=1.7.6" }]
+overrides = [{ name = "nomad-nmr-schema", git = "https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git?rev=cbecd3e37679b7a5ad3d0c65e0b37d87b1f599a4" }]
 
 [[package]]
 name = "aiofiles"

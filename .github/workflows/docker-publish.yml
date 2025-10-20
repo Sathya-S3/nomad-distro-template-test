@@ -99,6 +99,10 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
+      - name: Enable authenticated git cloning
+        run: |
+          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
       - name: Run plugin tests
         env:
           PLUGIN_TESTS_CI_NODE_INDEX: ${{ matrix.group }}

@@ -1,0 +1,23 @@
+{
+  "remote.autoForwardPorts": true,
+  "remote.autoForwardPortsSource": "process",
+  "remote.portsAttributes": {
+    "80": {
+      "label": "NOMAD Proxy (HTTP)",
+      "onAutoForward": "notify"
+    },
+    "443": {
+      "label": "NOMAD Proxy (HTTPS)",
+      "onAutoForward": "notify"
+    },
+    "9000": {
+      "label": "JupyterHub",
+      "onAutoForward": "notify"
+    },
+    "8081": {
+      "label": "NORTH Hub",
+      "onAutoForward": "notify"
+    }
+  },
+  "remote.forwardOnOpen": true
+}

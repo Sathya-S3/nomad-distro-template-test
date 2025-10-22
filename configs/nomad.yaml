@@ -7,10 +7,12 @@ oasis:
   uses_central_user_management: true
 
 north:
+  enabled: true
   jupyterhub_crypt_key: "978bfb2e13a8448a253c629d8dd84ff89587f30e635b753153960930cad9d36d"
   tools:
     include:
       - voila
+      - jupyter
     options:
       jupyter:
         image: ghcr.io/sathya-s3/nomad-distro-template-test/jupyter:main
@@ -18,21 +20,12 @@ north:
         maintainer:
           - name: Sathya Sai Seetharaman
             email: sathya-sai.seetharaman@stfc.ac.uk
-        
-        # Docker image with Voilà installed
-        image: "ccpnc-voila:dev"
-        
-        # URL path to access Voilà
-        path_prefix: "voila/render"
-        
-        # Enable launching with specific notebook file
+        image: ghcr.io/sathya-s3/nomad-distro-template-test/jupyter:main
+        path_prefix: voila/render
         with_path: true
-        
-        # Which files can launch this tool
-        file_extensions: ["ipynb"]
-        
-        # Where files are mounted in container
-        mount_path: "/home/jovyan"
+        mount_path: /home/jovyan
+        file_extensions:
+          - ipynb
 
 meta:
   deployment: "oasis"

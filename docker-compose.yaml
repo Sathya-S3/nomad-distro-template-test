@@ -168,6 +168,7 @@ services:
       NOMAD_SERVICE: nomad_oasis_north
       NOMAD_NORTH_DOCKER_NETWORK: nomad_oasis_network
       NOMAD_NORTH_HUB_CONNECT_IP: north
+      NOMAD_NORTH_HUB_CONNECT_URL: "http://north:8081/nomad-oasis/north/hub/"
       NOMAD_NORTH_HUB_IP: "0.0.0.0"
       NOMAD_NORTH_HUB_HOST: north
       NOMAD_SERVICES_API_HOST: app

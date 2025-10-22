@@ -181,6 +181,7 @@ services:
       # - ./configs/nomad.yaml:/app/nomad.yaml
       - ./.volumes/fs:/app/.volumes/fs
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./jupyterhub_config_fix.py:/app/nomad/jupyterhub_config.py:ro
     user: "1000:988"
     command: python -m nomad.cli admin run hub
     healthcheck:

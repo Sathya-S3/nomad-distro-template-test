@@ -206,6 +206,10 @@ WORKDIR "${HOME}"
 COPY --from=uv_image /uv /bin/uv
 COPY --from=jupyter_builder /opt/conda /opt/conda
 
+# FIX: Reinstall pyzmq to fix "AttributeError: module 'zmq.backend.cython' has no attribute 'PYZMQ_DRAFT_API'"
+# This happens when pyzmq is corrupted during conda environment copy
+# Must use conda to reinstall in the conda environment, not pip
+RUN conda install -y -c conda-forge pyzmq && conda clean -afy
 
 # Get rid ot the following message when you open a terminal in jupyterlab:
 # groups: cannot find name for group ID 11320

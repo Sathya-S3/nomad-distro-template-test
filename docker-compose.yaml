@@ -65,30 +65,30 @@ services:
       retries: 30
       start_period: 10s
 
-  # JupyterHub for NORTH tools
-  jupyterhub:
-    restart: unless-stopped
-    image: jupyterhub/jupyterhub:4.1.6
-    container_name: nomad_jupyterhub
-    volumes:
-      # Mount Docker socket to spawn containers
-      - /var/run/docker.sock:/var/run/docker.sock:rw
-      # Mount JupyterHub config from NOMAD
-      - ./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py:ro
-    ports:
-      - 9000:9000
-    environment:
-      - DOCKER_NETWORK_NAME=nomad-distro-dev-test_default
-    command: >
-      bash -c "
-      pip install dockerspawner oauthenticator &&
-      jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
-      "
-    depends_on:
-      - mongo
-      - rabbitmq
-    networks:
-      - default
+  # # JupyterHub for NORTH tools
+  # jupyterhub:
+  #   restart: unless-stopped
+  #   image: jupyterhub/jupyterhub:4.1.6
+  #   container_name: nomad_jupyterhub
+  #   volumes:
+  #     # Mount Docker socket to spawn containers
+  #     - /var/run/docker.sock:/var/run/docker.sock:rw
+  #     # Mount JupyterHub config from NOMAD
+  #     - ./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py:ro
+  #   ports:
+  #     - 9000:9000
+  #   environment:
+  #     - DOCKER_NETWORK_NAME=nomad-distro-dev-test_default
+  #   command: >
+  #     bash -c "
+  #     pip install dockerspawner oauthenticator &&
+  #     jupyterhub -f /srv/jupyterhub/jupyterhub_config.py
+  #     "
+  #   depends_on:
+  #     - mongo
+  #     - rabbitmq
+  #   networks:
+  #     - default
 
   # nomad worker (processing)
   worker:
@@ -168,7 +168,6 @@ services:
       NOMAD_SERVICE: nomad_oasis_north
       NOMAD_NORTH_DOCKER_NETWORK: nomad_oasis_network
       NOMAD_NORTH_HUB_CONNECT_IP: north
-      NOMAD_NORTH_HUB_CONNECT_URL: "http://north:8081/nomad-oasis/north/hub/"
       NOMAD_NORTH_HUB_IP: "0.0.0.0"
       NOMAD_NORTH_HUB_HOST: north
       NOMAD_SERVICES_API_HOST: app
@@ -243,17 +242,16 @@ services:
         condition: service_healthy
     ports:
       - 80:80
-      - 443:443
 
-  # jupyterlab image: (this is only used to pull the image, no service is run for this)
-  jupyterlab_image:
-    image: ghcr.io/sathya-s3/nomad-distro-template-test/jupyter:main
-    platform: linux/amd64
-    container_name: nomad_jupyter_image
-    pull_policy: always
-    entrypoint: ["true"]
-    deploy:
-      replicas: 0 # Ensures the service isn't started
+  # # jupyterlab image: (this is only used to pull the image, no service is run for this)
+  # jupyterlab_image:
+  #   image: ghcr.io/sathya-s3/nomad-distro-template-test/jupyter:main
+  #   platform: linux/amd64
+  #   container_name: nomad_jupyter_image
+  #   pull_policy: always
+  #   entrypoint: ["true"]
+  #   deploy:
+  #     replicas: 0 # Ensures the service isn't started
 
 volumes:
   mongo:

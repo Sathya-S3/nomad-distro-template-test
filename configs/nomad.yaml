@@ -4,7 +4,7 @@ services:
 
 oasis:
   is_oasis: true
-  uses_central_user_management: true
+  uses_central_user_management: false
 
 north:
   enabled: true
@@ -26,6 +26,13 @@ north:
         mount_path: /home/jovyan
         file_extensions:
           - ipynb
+
+keycloak:
+  server_url: 'http://keycloak:8080/auth/'
+  public_server_url: 'http://localhost/keycloak/auth/'
+  realm_name: nomad
+  username: 'admin'
+  password: 'password'
 
 meta:
   deployment: "oasis"

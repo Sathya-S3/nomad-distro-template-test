@@ -13,7 +13,11 @@ prerelease-mode = "disallow"
 
 [manifest]
 constraints = [{ name = "hyperspy", specifier = ">=1.7.6" }]
-overrides = [{ name = "nomad-nmr-schema", git = "https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git?rev=cbecd3e37679b7a5ad3d0c65e0b37d87b1f599a4" }]
+overrides = [
+    { name = "nomad-nmr-schema", git = "https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git?rev=cbecd3e37679b7a5ad3d0c65e0b37d87b1f599a4" },
+    { name = "nomad-oasis-schema-parser-plugin", git = "https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git?rev=d10a5eff559b5bb74e912973800173d7f7d69bf9" },
+    { name = "nomad-parser-magres", git = "https://github.com/FAIRmat-NFDI/nomad-parser-magres.git?rev=0c5cf73118b91d2c4bf0e6d699a8b9c9ba8e055e" },
+]
 
 [[package]]
 name = "aiofiles"

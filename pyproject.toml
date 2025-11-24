@@ -27,7 +27,7 @@ dependencies = [
   "nomad-parser-plugins-electronic>=1.0",
   "nomad-parser-plugins-atomistic>=1.0.6",
   "ccpnc-oasis-app @ git+https://github.com/CCP-NC/ccpnc-oasis-app.git@3cd4b2d658bc924487ab6b2ac5ca81ded95b3b24",
-  "nomad-oasis-schema-parser-plugin @ git+https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git@d10a5eff559b5bb74e912973800173d7f7d69bf9",]
+  "nomad-oasis-schema-parser-plugin @ git+https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git@7de56d8730b32ffdbaabb3a24292ea61bade5efa",]
 
 
 [project.urls]
@@ -53,8 +53,6 @@ constraint-dependencies = ["hyperspy>=1.7.6"]
 #remove override when final version is available
 override-dependencies = [
   "nomad-nmr-schema @ git+https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git@cbecd3e37679b7a5ad3d0c65e0b37d87b1f599a4",
-  "nomad-parser-magres @ git+https://github.com/FAIRmat-NFDI/nomad-parser-magres.git@0c5cf73118b91d2c4bf0e6d699a8b9c9ba8e055e",
-  "nomad-oasis-schema-parser-plugin @ git+https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git@d10a5eff559b5bb74e912973800173d7f7d69bf9",
 ]
 prerelease = "disallow"
 

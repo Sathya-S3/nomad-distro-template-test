@@ -2477,7 +2477,7 @@ requires-dist = [
     { name = "jupyter-flex", marker = "extra == 'jupyter'" },
     { name = "nomad-lab", extras = ["dev", "infrastructure", "parsing"], marker = "extra == 'dev'", specifier = ">=1.3.4" },
     { name = "nomad-lab", extras = ["infrastructure", "parsing"], specifier = ">=1.3.10" },
-    { name = "nomad-oasis-schema-parser-plugin", git = "https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git?rev=7de56d8730b32ffdbaabb3a24292ea61bade5efa" },
+    { name = "nomad-oasis-schema-parser-plugin", git = "https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git?rev=21852ee06026d30dcc3e476a263c7dee2d38e4a6" },
     { name = "nomad-parser-plugins-atomistic", specifier = ">=1.0.6" },
     { name = "nomad-parser-plugins-electronic", specifier = ">=1.0" },
     { name = "nomad-schema-plugin-run", specifier = ">=1.0.1" },
@@ -2618,7 +2618,7 @@ wheels = [
 [[package]]
 name = "nomad-oasis-schema-parser-plugin"
 version = "0.1.0"
-source = { git = "https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git?rev=7de56d8730b32ffdbaabb3a24292ea61bade5efa#7de56d8730b32ffdbaabb3a24292ea61bade5efa" }
+source = { git = "https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git?rev=21852ee06026d30dcc3e476a263c7dee2d38e4a6#21852ee06026d30dcc3e476a263c7dee2d38e4a6" }
 dependencies = [
     { name = "nomad-lab" },
     { name = "nomad-nmr-schema" },

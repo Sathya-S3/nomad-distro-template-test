@@ -13,7 +13,7 @@ prerelease-mode = "disallow"
 
 [manifest]
 constraints = [{ name = "hyperspy", specifier = ">=1.7.6" }]
-overrides = [{ name = "nomad-nmr-schema", git = "https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git?rev=cbecd3e37679b7a5ad3d0c65e0b37d87b1f599a4" }]
+overrides = [{ name = "nomad-nmr-schema", git = "https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git?rev=4abec3fefc726a93d3ea8794058cc18622bfe90c" }]
 
 [[package]]
 name = "aiofiles"
@@ -360,7 +360,7 @@ wheels = [
 [[package]]
 name = "ccpnc-oasis-app"
 version = "0.1.0"
-source = { git = "https://github.com/CCP-NC/ccpnc-oasis-app.git?rev=3cd4b2d658bc924487ab6b2ac5ca81ded95b3b24#3cd4b2d658bc924487ab6b2ac5ca81ded95b3b24" }
+source = { git = "https://github.com/CCP-NC/ccpnc-oasis-app.git?rev=b0e31b0b8d09be195efbf43ee884d23ffd042125#b0e31b0b8d09be195efbf43ee884d23ffd042125" }
 dependencies = [
     { name = "nomad-lab" },
     { name = "python-magic-bin", marker = "sys_platform == 'win32'" },
@@ -2470,14 +2470,14 @@ jupyter = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ccpnc-oasis-app", git = "https://github.com/CCP-NC/ccpnc-oasis-app.git?rev=3cd4b2d658bc924487ab6b2ac5ca81ded95b3b24" },
+    { name = "ccpnc-oasis-app", git = "https://github.com/CCP-NC/ccpnc-oasis-app.git?rev=b0e31b0b8d09be195efbf43ee884d23ffd042125" },
     { name = "ipyaggrid", marker = "extra == 'jupyter'" },
     { name = "ipydatagrid", marker = "extra == 'jupyter'" },
     { name = "ipysheet", marker = "extra == 'jupyter'" },
     { name = "jupyter-flex", marker = "extra == 'jupyter'" },
     { name = "nomad-lab", extras = ["dev", "infrastructure", "parsing"], marker = "extra == 'dev'", specifier = ">=1.3.4" },
     { name = "nomad-lab", extras = ["infrastructure", "parsing"], specifier = ">=1.3.10" },
-    { name = "nomad-oasis-schema-parser-plugin", git = "https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git?rev=52c2bb67ee348d8b4e6fd8f980ed146631e71cae" },
+    { name = "nomad-oasis-schema-parser-plugin", git = "https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git?rev=4e463d5dbe5ada77c2453d0329dd580d22ec6afd" },
     { name = "nomad-parser-plugins-atomistic", specifier = ">=1.0.6" },
     { name = "nomad-parser-plugins-electronic", specifier = ">=1.0" },
     { name = "nomad-schema-plugin-run", specifier = ">=1.0.1" },
@@ -2579,46 +2579,17 @@ infrastructure = [
 [[package]]
 name = "nomad-nmr-schema"
 version = "0.1.0"
-source = { git = "https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git?rev=cbecd3e37679b7a5ad3d0c65e0b37d87b1f599a4#cbecd3e37679b7a5ad3d0c65e0b37d87b1f599a4" }
+source = { git = "https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git?rev=4abec3fefc726a93d3ea8794058cc18622bfe90c#4abec3fefc726a93d3ea8794058cc18622bfe90c" }
 dependencies = [
     { name = "nomad-lab" },
-    { name = "nomad-normalizer-plugin-simulation-workflow" },
-    { name = "nomad-normalizer-plugin-system" },
-    { name = "nomad-schema-plugin-run" },
-    { name = "nomad-schema-plugin-simulation-workflow" },
     { name = "nomad-simulations" },
     { name = "python-magic-bin", marker = "sys_platform == 'win32'" },
 ]
 
 [[package]]
-name = "nomad-normalizer-plugin-simulation-workflow"
-version = "1.0.3"
-source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
-dependencies = [
-    { name = "nomad-lab" },
-    { name = "nomad-schema-plugin-simulation-workflow" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/ee/c6/6dce5a3c8673416dfdd603a76dad60125be499991000a2cdf8d475a05aa0/nomad_normalizer_plugin_simulation_workflow-1.0.3.tar.gz", hash = "sha256:c9b3cc7d297e116d1e235086543f1e92c9b7154ab8662efb105204f9a7a3520b", size = 102414, upload-time = "2025-03-17T14:52:43.384Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/cf/65/c60c11a563a658e58fb68360e41e26d2840ba24cdffa375528207410de6d/nomad_normalizer_plugin_simulation_workflow-1.0.3-py3-none-any.whl", hash = "sha256:1e1d9dd86feb8e7617c18c6a7b6ae33ab95bc3374cbbf3c154aa34ed45bfbffd", size = 8595, upload-time = "2025-03-17T14:52:41.912Z" },
-]
-
-[[package]]
-name = "nomad-normalizer-plugin-system"
-version = "1.0.4"
-source = { registry = "https://gitlab.mpcdf.mpg.de/api/v4/projects/2187/packages/pypi/simple" }
-dependencies = [
-    { name = "nomad-lab" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/11/e4/b3a2d51bacff41101a25e048a75cd53decfeb2ca602283b6e8c5c3912ef2/nomad_normalizer_plugin_system-1.0.4.tar.gz", hash = "sha256:8f1d8c2f1bec1005d96a0bd768504d6000e80c230a0710909728ae35b8687b93", size = 19867793, upload-time = "2025-08-11T10:29:14.387Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/02/3c/ee50b911046cae94e0d2bf6b45cb799964c2cb41b2877b065aa434a72a23/nomad_normalizer_plugin_system-1.0.4-py3-none-any.whl", hash = "sha256:f0974c4d2ef073f5d7cf100230f3261f1636976f310daf6f3f45afa2d5b33995", size = 13021, upload-time = "2025-08-11T10:29:12.025Z" },
-]
-
-[[package]]
 name = "nomad-oasis-schema-parser-plugin"
 version = "0.1.0"
-source = { git = "https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git?rev=52c2bb67ee348d8b4e6fd8f980ed146631e71cae#52c2bb67ee348d8b4e6fd8f980ed146631e71cae" }
+source = { git = "https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git?rev=4e463d5dbe5ada77c2453d0329dd580d22ec6afd#4e463d5dbe5ada77c2453d0329dd580d22ec6afd" }
 dependencies = [
     { name = "nomad-lab" },
     { name = "nomad-nmr-schema" },
@@ -2631,8 +2602,8 @@ dependencies = [
 
 [[package]]
 name = "nomad-parser-magres"
-version = "0.1.dev128+g0c5cf7311"
-source = { git = "https://github.com/FAIRmat-NFDI/nomad-parser-magres.git?rev=0c5cf73118b91d2c4bf0e6d699a8b9c9ba8e055e#0c5cf73118b91d2c4bf0e6d699a8b9c9ba8e055e" }
+version = "0.1.dev132+g9caf01b63"
+source = { git = "https://github.com/FAIRmat-NFDI/nomad-parser-magres.git?rev=9caf01b63e98a666174a0b422ffb386ddd2e8713#9caf01b63e98a666174a0b422ffb386ddd2e8713" }
 dependencies = [
     { name = "nomad-lab" },
     { name = "nomad-nmr-schema" },

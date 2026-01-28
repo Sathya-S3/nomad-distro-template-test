@@ -26,7 +26,7 @@ dependencies = [
   "nomad-schema-plugin-run>=1.0.1",
   "nomad-parser-plugins-electronic>=1.0",
   "nomad-parser-plugins-atomistic>=1.0.6",
-  "ccpnc-oasis-app @ git+https://github.com/CCP-NC/ccpnc-oasis-app.git@fd3ca81ee797bdfd5234f9bfc9296342c30c6e2b",
+  "ccpnc-oasis-app @ git+https://github.com/CCP-NC/ccpnc-oasis-app.git@734a97066207849c4a7b3f3d92ccc74200d2a7aa",
   "nomad-oasis-schema-parser-plugin @ git+https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git@4e463d5dbe5ada77c2453d0329dd580d22ec6afd",]
 
 
